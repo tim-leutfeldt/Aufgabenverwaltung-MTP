@@ -3,7 +3,7 @@ title: "Git-Übungen zur Aufgabenverwaltung"
 authors:
   - Tim Leutfeldt
 status: draft
-file-version: "1.0"
+file-version: "2.0"
 created: 2026-11-03
 last-updated: 2026-11-03
 ---
@@ -14,6 +14,7 @@ last-updated: 2026-11-03
 
 | Version | Date | Author(s) | Summary of Changes |
 |:---|:---|:---|:---|
+| 2.0 | 2026-11-03 | Tim Leutfeldt | Release, Hotfix, Rückführung und Prüfergebnis ergänzt. |
 | 1.0 | 2026-11-03 | Tim Leutfeldt | Lokale Git-Übungen und erster Gitflow-Release dokumentiert. |
 
 ## Executive Summary
@@ -54,6 +55,8 @@ Die praktischen Git-Übungen aus `KAS_Git_1_1.pdf` werden mit echten Git-Objekte
 | [#2](https://github.com/tim-leutfeldt/Aufgabenverwaltung-MTP/pull/2) | A141: Wiedereröffnungsdatum | `main` |
 | [#3](https://github.com/tim-leutfeldt/Aufgabenverwaltung-MTP/pull/3) | Echter Merge-Konflikt und manuelle Lösung | `main` |
 | [#4](https://github.com/tim-leutfeldt/Aufgabenverwaltung-MTP/pull/4) | Gitflow-Feature: Paketannahmezeiten | `develop` |
+| [#5](https://github.com/tim-leutfeldt/Aufgabenverwaltung-MTP/pull/5) | Release 1.2.0 | `main` |
+| [#6](https://github.com/tim-leutfeldt/Aufgabenverwaltung-MTP/pull/6) | Release 1.2.0 zurückführen | `develop` |
 
 Branches und Tags wurden zu GitHub gepusht. Nach den GitHub-Merges wurden die lokalen Zielbranches mit `git pull --ff-only origin <branch>` aktualisiert.
 
@@ -67,6 +70,20 @@ Die Fork-Übung setzt ein fremdes Upstream-Repository voraus. Hier ist das priva
 4. PR #4 nach `develop` erstellen und mit Merge-Commit zusammenführen.
 5. `develop` aktualisieren und `release/1.2.0` erstellen.
 6. Auf dem Release-Branch die Übung dokumentieren und prüfen.
+7. PR #5 nach `main` zusammenführen und den annotierten Tag `1.2.0` pushen.
+8. Das veröffentlichte Release mit PR #6 von `main` nach `develop` zurückführen.
+
+### Hotfix 1.2.1
+
+Vom veröffentlichten `main` wurde `hotfix/1.2.1` erstellt. Der Hotfix korrigiert die Höflichkeitsanrede „sie“ zu „Sie“ im Brief. Er wird zuerst per Pull Request nach `main` integriert, als `1.2.1` annotiert getaggt und anschließend per Pull Request nach `develop` zurückgeführt. Damit wird auch der Wartungsablauf aus Seite 87 tatsächlich ausgeführt.
+
+## Prüfung
+
+- `git diff --check`: ohne Fehler.
+- Die Konfliktmarker wurden vollständig entfernt; der Brief enthält Anrede, Wiedereröffnungsdatum und vereinheitlichte Filialleitung.
+- Das C#-Projekt zielt auf `net9.0`. Der lokale Build mit `dotnet build Aufgabenverwaltung/Aufgabenverwaltung.csproj --no-restore` scheitert mit `NETSDK1045`, weil nur SDK `8.0.400` verfügbar ist. Für Build und Tests wird ein .NET-9-kompatibles SDK benötigt.
+- Die aufgerufenen `dotnet test --no-restore`-Befehle lieferten keine Testausführung; sie sind kein Nachweis bestandener Tests.
+- Fork und separates Clone sind in diesem bestehenden Originalrepository nicht ausgeführt worden. Die anderen Entwicklungsrollen werden durch unabhängige Branches im selben Arbeitsverzeichnis dargestellt.
 
 ## Historie selbst ansehen
 
