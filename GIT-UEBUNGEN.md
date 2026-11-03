@@ -3,7 +3,7 @@ title: "Git-Übungen zur Aufgabenverwaltung"
 authors:
   - Tim Leutfeldt
 status: draft
-file-version: "2.0"
+file-version: "2.1"
 created: 2026-11-03
 last-updated: 2026-11-03
 ---
@@ -14,6 +14,7 @@ last-updated: 2026-11-03
 
 | Version | Date | Author(s) | Summary of Changes |
 |:---|:---|:---|:---|
+| 2.1 | 2026-11-03 | Tim Leutfeldt | Abgeschlossene Hotfix-Pull-Requests verlinkt. |
 | 2.0 | 2026-11-03 | Tim Leutfeldt | Release, Hotfix, Rückführung und Prüfergebnis ergänzt. |
 | 1.0 | 2026-11-03 | Tim Leutfeldt | Lokale Git-Übungen und erster Gitflow-Release dokumentiert. |
 
@@ -57,6 +58,8 @@ Die praktischen Git-Übungen aus `KAS_Git_1_1.pdf` werden mit echten Git-Objekte
 | [#4](https://github.com/tim-leutfeldt/Aufgabenverwaltung-MTP/pull/4) | Gitflow-Feature: Paketannahmezeiten | `develop` |
 | [#5](https://github.com/tim-leutfeldt/Aufgabenverwaltung-MTP/pull/5) | Release 1.2.0 | `main` |
 | [#6](https://github.com/tim-leutfeldt/Aufgabenverwaltung-MTP/pull/6) | Release 1.2.0 zurückführen | `develop` |
+| [#7](https://github.com/tim-leutfeldt/Aufgabenverwaltung-MTP/pull/7) | Hotfix 1.2.1: Höflichkeitsanrede | `main` |
+| [#8](https://github.com/tim-leutfeldt/Aufgabenverwaltung-MTP/pull/8) | Hotfix 1.2.1 zurückführen | `develop` |
 
 Branches und Tags wurden zu GitHub gepusht. Nach den GitHub-Merges wurden die lokalen Zielbranches mit `git pull --ff-only origin <branch>` aktualisiert.
 
@@ -75,7 +78,7 @@ Die Fork-Übung setzt ein fremdes Upstream-Repository voraus. Hier ist das priva
 
 ### Hotfix 1.2.1
 
-Vom veröffentlichten `main` wurde `hotfix/1.2.1` erstellt. Der Hotfix korrigiert die Höflichkeitsanrede „sie“ zu „Sie“ im Brief. Er wird zuerst per Pull Request nach `main` integriert, als `1.2.1` annotiert getaggt und anschließend per Pull Request nach `develop` zurückgeführt. Damit wird auch der Wartungsablauf aus Seite 87 tatsächlich ausgeführt.
+Vom veröffentlichten `main` wurde `hotfix/1.2.1` erstellt. Der Hotfix korrigiert die Höflichkeitsanrede „sie“ zu „Sie“ im Brief. Er wurde mit PR #7 nach `main` integriert, als `1.2.1` annotiert getaggt und mit PR #8 nach `develop` zurückgeführt. Damit wurde auch der Wartungsablauf aus Seite 87 tatsächlich ausgeführt. Alle acht verlinkten Pull Requests sind zusammengeführt.
 
 ## Prüfung
 
